@@ -22,9 +22,8 @@ namespace ConsoleApp1
     }
 
     public delegate void MyDelegate();
-    public class DelegateExercises
+    public class DelegateExercises : MyDelegate
     {
-
         void Method1()
         {
             System.Console.WriteLine("Method1");
@@ -34,8 +33,5 @@ namespace ConsoleApp1
             MyDelegate myDelegate = new MyDelegate(Method1);
             myDelegate();
         }
-
-
-
     }
 }
