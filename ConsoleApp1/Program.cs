@@ -16,23 +16,32 @@ namespace ConsoleApp1
             // March 6, 2019
 
             DelegateExcercises a = new DelegateExcercises();
-            a.Method2(); 
+            a.Method3();
+            Console.ReadLine();
         }
     }
    
        public class DelegateExcercises
         { 
-            public delegate void MyDelegate();
-
-            void Method1(int i)
-            {
-                Console.WriteLine("Method1");
-                Console.ReadLine();
-            }
-            public void Method2()
+            public delegate int  MyDelegate(int intValue);
+            public int Method1(int intMethod1)
+        {
+            return intMethod1 * 2;
+        }
+        public int Method2(int intMethod2)
+        {
+            return intMethod2 * 10;
+        }
+    
+            public void Method3()
             {
                 MyDelegate myDelegate = new MyDelegate(Method1);
-                myDelegate();
+            int result1 = myDelegate(10);
+            System.Console.WriteLine(result1);
+            myDelegate = new MyDelegate(Method2);
+            int result2 = myDelegate(10);
+            System.Console.WriteLine(result2);
+
             }
         }
          
